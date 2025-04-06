@@ -6,12 +6,13 @@ process.env.NEXT_PUBLIC_BASE_PATH = basePath;
 
 let nextConfig: NextConfig = {
   /* config options here */
+  output: 'standalone',
   basePath : process.env.NODE_ENV === 'production' ? '/app1' : '',
-  assetPrefix : process.env.NODE_ENV === 'production' ? '/app1' : '',
+  // assetPrefix : process.env.NODE_ENV === 'production' ? '/app1' : '',
 };
 
-console.log('basePath : ', nextConfig.basePath)
-console.log('NODE_ENV : ', process.env.NODE_ENV)
+console.log('basePath in next.config.ts : ', nextConfig.basePath)
+console.log('NODE_ENV in next.config.ts : ', process.env.NODE_ENV)
 
 // PWA 설정 추가 (개발 중에는 비활성화하는 것이 일반적)
 if (process.env.NODE_ENV === "production") {
